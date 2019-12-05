@@ -1,4 +1,4 @@
-2019-12-05 16:15:16,746 ERROR: Exception on /user/steve [GET] [in /Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py:1891]
+2019-12-05 16:14:30,780 ERROR: Exception on /user/steve [GET] [in /Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -65,4 +65,43 @@ Traceback (most recent call last):
   File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/parser.py", line 59, in fail
     raise exc(msg, lineno, self.name, self.filename)
 jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endblock'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
-2019-12-05 16:15:34,708 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
+2019-12-05 16:14:31,379 ERROR: Exception on /explore [GET] [in /Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/scammons/Projects/learn_flask/app/routes.py", line 45, in explore
+    if psots.has_prev else None
+NameError: name 'psots' is not defined
+2019-12-05 16:14:43,577 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
+2019-12-05 16:14:44,301 ERROR: Exception on /explore [GET] [in /Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/scammons/Projects/learn_flask/app/routes.py", line 46, in explore
+    return render_template('index.html', title='Explore', form=form, posts=posts.items,
+NameError: name 'form' is not defined
+2019-12-05 16:14:59,504 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]

@@ -9,6 +9,10 @@ class LoginForm(FlaskForm):
 	remember_me = BooleanField('Remember Me')
 	submit = SubmitField('Sign In')
 
+class PostForm(FlaskForm):
+	post = TextAreaField('Say something', validators=[DataRequired()])
+	submit = SubmitField('Post!')
+
 class EditProfileForm(FlaskForm):
 	username = StringField('Username', validators=[DataRequired()])
 	about_me = TextAreaField('About me', validators=[Length(min=0, max=140)])
