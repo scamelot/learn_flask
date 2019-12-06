@@ -1,7 +1,4 @@
-2019-12-05 11:02:21,034 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
-2019-12-05 11:02:26,301 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
-2019-12-05 11:02:33,396 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
-2019-12-05 11:02:42,601 ERROR: Exception on /index [GET] [in /Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py:1891]
+2019-12-05 14:06:48,409 ERROR: Exception on /user/dave [GET] [in /Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -17,49 +14,7 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/scammons/Projects/learn_flask/app/routes.py", line 20, in index
-    form = PostForm()
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/wtforms/form.py", line 212, in __call__
-    return type.__call__(cls, *args, **kwargs)
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask_wtf/form.py", line 88, in __init__
-    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/wtforms/form.py", line 272, in __init__
-    super(Form, self).__init__(self._unbound_fields, meta=meta_obj, prefix=prefix)
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/wtforms/form.py", line 52, in __init__
-    field = meta.bind_field(self, unbound_field, options)
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/wtforms/meta.py", line 27, in bind_field
-    return unbound_field.bind(form=form, **options)
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/wtforms/fields/core.py", line 353, in bind
-    return self.field_class(*self.args, **kw)
-TypeError: __init__() got an unexpected keyword argument 'submit'
-2019-12-05 11:04:25,244 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
-2019-12-05 11:16:34,992 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
-2019-12-05 12:09:16,184 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
-2019-12-05 12:24:54,949 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
-2019-12-05 12:26:32,511 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
-2019-12-05 12:33:20,908 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
-2019-12-05 12:38:01,135 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
-2019-12-05 12:43:48,649 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
-2019-12-05 12:44:28,365 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
-2019-12-05 13:00:19,746 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
-2019-12-05 13:11:58,569 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
-2019-12-05 13:12:00,906 ERROR: Exception on /user/dave [GET] [in /Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/scammons/Projects/learn_flask/app/routes.py", line 96, in user
+  File "/Users/scammons/Projects/learn_flask/app/routes.py", line 126, in user
     return render_template('user.html', user=user, posts=posts)
   File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/templating.py", line 138, in render_template
     ctx.app.jinja_env.get_or_select_template(template_name_or_list),
@@ -104,4 +59,4 @@ Traceback (most recent call last):
   File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/lexer.py", line 384, in expect
     self.name, self.filename)
 jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', got '='
-2019-12-05 14:06:40,030 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
+2019-12-05 14:07:26,735 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]

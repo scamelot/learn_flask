@@ -1,16 +1,7 @@
-2019-12-03 09:24:35,324 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:(lineno)d]
-2019-12-03 09:24:59,938 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:47]
-2019-12-03 10:24:02,723 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
-2019-12-03 10:24:08,069 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
-2019-12-04 17:08:38,382 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
-2019-12-04 17:09:35,079 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
-2019-12-04 17:09:52,344 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
-2019-12-04 17:10:24,354 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
-2019-12-05 10:11:34,753 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
-2019-12-05 10:12:19,607 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
-2019-12-05 10:13:49,333 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
-2019-12-05 10:59:57,255 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
-2019-12-05 11:00:06,630 ERROR: Exception on /login [GET] [in /Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py:1891]
+2019-12-05 11:02:21,034 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
+2019-12-05 11:02:26,301 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
+2019-12-05 11:02:33,396 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
+2019-12-05 11:02:42,601 ERROR: Exception on /index [GET] [in /Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -24,42 +15,35 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/scammons/Projects/learn_flask/app/routes.py", line 52, in login
-    return render_template('login.html', title='Sign In', form=form)
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "/Users/scammons/Projects/learn_flask/app/templates/login.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1005, in render
-    return concat(self.root_render_func(self.new_context(vars)))
-  File "/Users/scammons/Projects/learn_flask/app/templates/login.html", line 14, in root
-    <p>
-  File "/Users/scammons/Projects/learn_flask/app/templates/base.html", line 25, in root
-    {% endfor %}
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/runtime.py", line 262, in call
-    return __obj(*args, **kwargs)
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 2215, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/helpers.py", line 358, in url_for
-    endpoint, values, method=method, force_external=external
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/werkzeug/routing.py", line 2020, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'epxlore'. Did you mean 'explore' instead?
-2019-12-05 11:01:07,932 ERROR: Exception on /login [GET] [in /Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py:1891]
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/scammons/Projects/learn_flask/app/routes.py", line 20, in index
+    form = PostForm()
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/wtforms/form.py", line 212, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask_wtf/form.py", line 88, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/wtforms/form.py", line 272, in __init__
+    super(Form, self).__init__(self._unbound_fields, meta=meta_obj, prefix=prefix)
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/wtforms/form.py", line 52, in __init__
+    field = meta.bind_field(self, unbound_field, options)
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/wtforms/meta.py", line 27, in bind_field
+    return unbound_field.bind(form=form, **options)
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/wtforms/fields/core.py", line 353, in bind
+    return self.field_class(*self.args, **kw)
+TypeError: __init__() got an unexpected keyword argument 'submit'
+2019-12-05 11:04:25,244 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
+2019-12-05 11:16:34,992 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
+2019-12-05 12:09:16,184 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
+2019-12-05 12:24:54,949 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
+2019-12-05 12:26:32,511 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
+2019-12-05 12:33:20,908 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
+2019-12-05 12:38:01,135 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
+2019-12-05 12:43:48,649 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
+2019-12-05 12:44:28,365 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
+2019-12-05 13:00:19,746 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
+2019-12-05 13:11:58,569 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
+2019-12-05 13:12:00,906 ERROR: Exception on /user/dave [GET] [in /Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -73,39 +57,51 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/scammons/Projects/learn_flask/app/routes.py", line 52, in login
-    return render_template('login.html', title='Sign In', form=form)
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/scammons/Projects/learn_flask/app/routes.py", line 96, in user
+    return render_template('user.html', user=user, posts=posts)
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/loaders.py", line 125, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/environment.py", line 591, in compile
+    self.handle_exception(exc_info, source_hint=source_hint)
   File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
   File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "/Users/scammons/Projects/learn_flask/app/templates/login.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1005, in render
-    return concat(self.root_render_func(self.new_context(vars)))
-  File "/Users/scammons/Projects/learn_flask/app/templates/login.html", line 14, in root
-    <p>
-  File "/Users/scammons/Projects/learn_flask/app/templates/base.html", line 25, in root
-    {% endfor %}
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/runtime.py", line 262, in call
-    return __obj(*args, **kwargs)
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 2215, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/helpers.py", line 358, in url_for
-    endpoint, values, method=method, force_external=external
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/werkzeug/routing.py", line 2020, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'epxlore'. Did you mean 'explore' instead?
-2019-12-05 11:01:11,049 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
+  File "/Users/scammons/Projects/learn_flask/app/templates/user.html", line 11, in template
+    <p><a href="{{url_for('follow'), username=user.username) }}">Follow</a></p>
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/parser.py", line 268, in parse_block
+    node.body = self.parse_statements(('name:endblock',), drop_needle=True)
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/parser.py", line 165, in parse_statements
+    result = self.subparse(end_tokens)
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/parser.py", line 212, in parse_if
+    node.body = self.parse_statements(('name:elif', 'name:else',
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/parser.py", line 165, in parse_statements
+    result = self.subparse(end_tokens)
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/parser.py", line 876, in subparse
+    self.stream.expect('variable_end')
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/lexer.py", line 384, in expect
+    self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', got '='
+2019-12-05 14:06:40,030 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]

@@ -1,4 +1,4 @@
-2019-12-05 16:14:30,780 ERROR: Exception on /user/steve [GET] [in /Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py:1891]
+2019-12-06 15:50:38,053 ERROR: Exception on /reset_password_request [GET] [in /Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,10 +12,8 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/scammons/Projects/learn_flask/app/routes.py", line 145, in user
-    next_url=next_url, prev_url=prev_url)
+  File "/Users/scammons/Projects/learn_flask/app/routes.py", line 130, in reset_password_request
+    return render_template('reset_password_request.html',title="Reset Password", form=form)
   File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/templating.py", line 138, in render_template
     ctx.app.jinja_env.get_or_select_template(template_name_or_list),
   File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/environment.py", line 869, in get_or_select_template
@@ -32,8 +30,8 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "/Users/scammons/Projects/learn_flask/app/templates/user.html", line 28, in template
-    {% endblock %}
+  File "/Users/scammons/Projects/learn_flask/app/templates/reset_password_request.html", line 10, in template
+    {% endfor %}
   File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/environment.py", line 497, in _parse
     return Parser(self, source, name, encode_filename(filename)).parse()
   File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/parser.py", line 901, in parse
@@ -48,14 +46,6 @@ Traceback (most recent call last):
     result = self.subparse(end_tokens)
   File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/parser.py", line 883, in subparse
     rv = self.parse_statement()
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/parser.py", line 130, in parse_statement
-    return getattr(self, 'parse_' + self.stream.current.value)()
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/parser.py", line 212, in parse_if
-    node.body = self.parse_statements(('name:elif', 'name:else',
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/parser.py", line 165, in parse_statements
-    result = self.subparse(end_tokens)
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/parser.py", line 883, in subparse
-    rv = self.parse_statement()
   File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/parser.py", line 144, in parse_statement
     self.fail_unknown_tag(token.value, token.lineno)
   File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/parser.py", line 97, in fail_unknown_tag
@@ -64,8 +54,9 @@ Traceback (most recent call last):
     self.fail(' '.join(message), lineno)
   File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/jinja2/parser.py", line 59, in fail
     raise exc(msg, lineno, self.name, self.filename)
-jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endblock'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
-2019-12-05 16:14:31,379 ERROR: Exception on /explore [GET] [in /Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py:1891]
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endfor'. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2019-12-06 15:51:26,781 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:49]
+2019-12-06 15:51:36,165 ERROR: Exception on /reset_password_request [POST] [in /Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -79,13 +70,11 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/scammons/Projects/learn_flask/app/routes.py", line 45, in explore
-    if psots.has_prev else None
-NameError: name 'psots' is not defined
-2019-12-05 16:14:43,577 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
-2019-12-05 16:14:44,301 ERROR: Exception on /explore [GET] [in /Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py:1891]
+  File "/Users/scammons/Projects/learn_flask/app/routes.py", line 127, in reset_password_request
+    send_password_request_email(user)
+NameError: name 'send_password_request_email' is not defined
+2019-12-06 15:54:34,641 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:49]
+2019-12-06 15:54:38,283 ERROR: Exception on /reset_password_request [POST] [in /Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -99,9 +88,28 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/scammons/Projects/learn_flask/app/routes.py", line 46, in explore
-    return render_template('index.html', title='Explore', form=form, posts=posts.items,
-NameError: name 'form' is not defined
-2019-12-05 16:14:59,504 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:48]
+  File "/Users/scammons/Projects/learn_flask/app/routes.py", line 128, in reset_password_request
+    send_password_request_email(user)
+  File "/Users/scammons/Projects/learn_flask/app/email.py", line 14, in send_password_request_email
+    text_body=render_template('email/reset_password.txt',
+NameError: name 'render_template' is not defined
+2019-12-06 15:54:47,747 ERROR: Exception on /reset_password_request [POST] [in /Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/scammons/Projects/learn_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/scammons/Projects/learn_flask/app/routes.py", line 128, in reset_password_request
+    send_password_request_email(user)
+  File "/Users/scammons/Projects/learn_flask/app/email.py", line 14, in send_password_request_email
+    text_body=render_template('email/reset_password.txt',
+NameError: name 'render_template' is not defined
+2019-12-06 15:56:09,543 INFO: Microblog startup [in /Users/scammons/Projects/learn_flask/app/__init__.py:49]
